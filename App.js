@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image, Button } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Room from "./components/Room"
+
 const Upcoming = [
   {
     title: 'Startup club',
@@ -44,6 +46,8 @@ export default function App() {
            </View>
         ))}
       </View>
+
+      <Room />
     </View>
   );
 }
