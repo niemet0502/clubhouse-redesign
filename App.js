@@ -30,17 +30,18 @@ export default function App() {
       </View>
 
       <View style={styles.upcomingRoom}>
-        <View style={styles.roomContainer}>
-          <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
-          <View style={styles.iconContainer}>
-            <View style={styles.roomTitle}>
-              <Text style={styles.title}>Startup club</Text>
-              <Text style={styles.roomTime}>10:30 PM</Text>
-            </View>
-            <Text style={styles.description}>UX for Startups: Design System</Text>
-          </View>
-        </View>
-
+        {Upcoming.map((room) => (
+           <View style={styles.roomContainer}>
+           <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
+           <View style={styles.iconContainer}>
+             <View style={styles.roomTitle}>
+               <Text style={styles.title}>Startup club</Text>
+               <Text style={styles.roomTime}>10:30 PM</Text>
+             </View>
+             <Text style={styles.description}>UX for Startups: Design System</Text>
+           </View>
+           </View>
+        ))}
       </View>
     </View>
   );
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   roomContainer:{
     display: 'flex',
     flexDirection: 'row',
+    marginTop: 15
   },
   iconContainer: {
     flex: 1,
