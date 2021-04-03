@@ -10,9 +10,10 @@ const Upcoming = [
   },
   {
     title: 'Live & Clicking',
-    date: '10:30 PM',
+    date: '12:30 PM',
     description: 'How to make an impact online'
   }
+  
 ]
 
 export default function App() {
@@ -35,10 +36,10 @@ export default function App() {
            <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
            <View style={styles.iconContainer}>
              <View style={styles.roomTitle}>
-               <Text style={styles.title}>Startup club</Text>
-               <Text style={styles.roomTime}>10:30 PM</Text>
+               <Text style={styles.title}>{ room.title}</Text>
+               <Text style={styles.roomTime}>{ room.date}</Text>
              </View>
-             <Text style={styles.description}>UX for Startups: Design System</Text>
+             <Text style={styles.description}>{ room.description}</Text>
            </View>
            </View>
         ))}
