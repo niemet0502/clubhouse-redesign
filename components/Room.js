@@ -43,8 +43,9 @@ export default function Room(props) {
 const styles = StyleSheet.create({
   container:{
     backgroundColor: '#FBF7F6',
-    marginTop: 25,
-    borderRadius: 15
+    marginTop: 15,
+    borderRadius: 15,
+    marginBottom: 10 
   },
   roomTitle:{
     fontSize: 24,
