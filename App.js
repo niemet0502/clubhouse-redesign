@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Image, Button } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TextInput, Image, Button } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Room from "./components/Room"
 
 const Upcoming = [
   {
+    index: 1,
     title: 'Startup club',
     date: '10:30 PM',
     description: 'UX for Startups: Design System'
   },
   {
+    index: 2,
     title: 'Live & Clicking',
     date: '12:30 PM',
     description: 'How to make an impact online'
@@ -20,7 +22,7 @@ const Upcoming = [
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.searchWrapper}>
         <TextInput style={styles.input} placeholder={'Find people & clubs'}/>
@@ -33,7 +35,7 @@ export default function App() {
       </View>
 
       <View style={styles.upcomingRoom}>
-        {Upcoming.map((room) => (
+        {Upcoming.map((room, index) => (
            <View style={styles.roomContainer}>
            <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
            <View style={styles.iconContainer}>
@@ -47,8 +49,20 @@ export default function App() {
         ))}
       </View>
 
-      <Room />
-    </View>
+      <Room 
+        title="Marketing vs Branding"
+        description="Entrepreneur millionaire secrets"
+        microNumber="12"
+        accountNumber="652"
+      />
+
+      <Room 
+         title="The Mindful Creative - Me"
+         description="The Mindful Creative"
+         microNumber="30"
+         accountNumber="1450"
+      />
+    </ScrollView>
   );
 }
 
@@ -58,7 +72,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F6F1ED',
     paddingTop: 70,
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
+    height: '90%'
   },
   searchWrapper:{
     display: 'flex',

@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-export default function Room() {
+
+export default function Room(props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.roomTitle}>Marketing vs Branding</Text>
+      <Text style={styles.roomTitle}> {props.title}</Text>
       <View style={styles.roomDescription}>
         <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
-        <Text style={styles.title}> Entrepreneur millionaire secrets</Text>
+        <Text style={styles.title}>  {props.description}</Text>
       </View>
       <View style={styles.userContainer}>
         <View style={styles.profilContainer}>
@@ -23,11 +24,11 @@ export default function Room() {
         <View style={styles.statContainer}>
           <View style={styles.microphone}>
             <MaterialCommunityIcons name="microphone" size={24} color="#C0C0C0" />
-            <Text style={styles.number}>12</Text>
+            <Text style={styles.number}> {props.microNumber}</Text>
           </View>
           <View style={styles.account}>
             <MaterialCommunityIcons name="account-group-outline" size={24} color="#C0C0C0" />
-            <Text style={styles.number}>652</Text>
+            <Text style={styles.number}> {props.accountNumber}</Text>
           </View>
         </View>
         
