@@ -22,47 +22,57 @@ const Upcoming = [
 
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.searchWrapper}>
-        <TextInput style={styles.input} placeholder={'Find people & clubs'}/>
-        <View style={styles.userWrapper}>
-          <Image
-            style={styles.userProfil}
-            source={require('./assets/user.jpeg')}
-          />
+    <View style={styles.container}>
+      <ScrollView >
+        <StatusBar style="auto" />
+        <View style={styles.searchWrapper}>
+          <TextInput style={styles.input} placeholder={'Find people & clubs'}/>
+          <View style={styles.userWrapper}>
+            <Image
+              style={styles.userProfil}
+              source={require('./assets/user.jpeg')}
+            />
+          </View>
         </View>
-      </View>
 
-      <View style={styles.upcomingRoom}>
-        {Upcoming.map((room, index) => (
-           <View style={styles.roomContainer}>
-           <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
-           <View style={styles.iconContainer}>
-             <View style={styles.roomTitle}>
-               <Text style={styles.title}>{ room.title}</Text>
-               <Text style={styles.roomTime}>{ room.date}</Text>
-             </View>
-             <Text style={styles.description}>{ room.description}</Text>
-           </View>
-           </View>
-        ))}
-      </View>
+        <View style={styles.upcomingRoom}>
+          {Upcoming.map((room, index) => (
+            <View style={styles.roomContainer}>
+            <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />
+            <View style={styles.iconContainer}>
+              <View style={styles.roomTitle}>
+                <Text style={styles.title}>{ room.title}</Text>
+                <Text style={styles.roomTime}>{ room.date}</Text>
+              </View>
+              <Text style={styles.description}>{ room.description}</Text>
+            </View>
+            </View>
+          ))}
+        </View>
 
-      <Room 
-        title="Marketing vs Branding"
-        description="Entrepreneur millionaire secrets"
-        microNumber="12"
-        accountNumber="652"
-      />
+        <Room 
+          title="Marketing vs Branding"
+          description="Entrepreneur millionaire secrets"
+          microNumber="12"
+          accountNumber="652"
+        />
 
-      <Room 
-         title="The Mindful Creative - Me"
-         description="The Mindful Creative"
-         microNumber="30"
-         accountNumber="1450"
-      />
-    </ScrollView>
+        <Room 
+          title="The Mindful Creative - Me"
+          description="The Mindful Creative"
+          microNumber="30"
+          accountNumber="1450"
+        />
+
+        <Room 
+          title="The Mindful Creative - Me"
+          description="The Mindful Creative"
+          microNumber="30"
+          accountNumber="1450"
+        />
+      </ScrollView>
+    </View>
+    
   );
 }
 
@@ -73,7 +83,6 @@ const styles = StyleSheet.create({
     paddingTop: 70,
     paddingLeft: 20,
     paddingRight: 20,
-    height: '90%'
   },
   searchWrapper:{
     display: 'flex',
