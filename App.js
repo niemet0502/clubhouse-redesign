@@ -23,7 +23,7 @@ const Upcoming = [
 export default function App() {
   return (
     <View style={styles.container}>
-      <ScrollView >
+      <ScrollView style={styles.ScrollViewContainer}>
         <StatusBar style="auto" />
         <View style={styles.searchWrapper}>
           <TextInput style={styles.input} placeholder={'Find people & clubs'}/>
@@ -80,6 +80,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F6F1ED',
+  },
+  ScrollViewContainer:{
     paddingTop: 70,
     paddingLeft: 20,
     paddingRight: 20,
