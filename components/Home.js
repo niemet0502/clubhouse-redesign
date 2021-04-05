@@ -35,12 +35,6 @@ export default function Home({navigation}) {
             />
           </View>
         </View>
-        <Button
-          title="Back to home"
-          onPress={() =>
-            navigation.navigate('RoomDetails')
-          }
-        />
         <View style={styles.upcomingRoom}>
           {Upcoming.map((room, index) => (
             <View style={styles.roomContainer}>
@@ -61,6 +55,9 @@ export default function Home({navigation}) {
           description="Entrepreneur millionaire secrets"
           microNumber="12"
           accountNumber="652"
+          onPress={() =>
+            navigation.navigate('RoomDetails')
+          }
         />
 
         <Room 
@@ -68,6 +65,9 @@ export default function Home({navigation}) {
           description="The Mindful Creative"
           microNumber="30"
           accountNumber="1450"
+          onPress={() =>
+            navigation.navigate('RoomDetails')
+          }
         />
 
         <Room 
@@ -75,6 +75,9 @@ export default function Home({navigation}) {
           description="The Mindful Creative"
           microNumber="30"
           accountNumber="1450"
+          onPress={() =>
+            navigation.navigate('RoomDetails')
+          }
         />
       </ScrollView>
     </View>
