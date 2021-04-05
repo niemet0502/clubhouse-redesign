@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Room(props) {
   return (
-    <View style={styles.container}>
+    <View style={styles.container}  onPress={()=>{props.navigation.navigate('RoomDetails')}}>
       <Text style={styles.roomTitle}> {props.title}</Text>
       <View style={styles.roomDescription}>
         <MaterialCommunityIcons name="home" size={24} color="#CEE7D9" />

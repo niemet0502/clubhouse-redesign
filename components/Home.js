@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput, Image, Button } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, TextInput, Image, Button, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Room from "./Room"
 
@@ -35,6 +35,13 @@ export default function Home({navigation}) {
             />
           </View>
         </View>
+
+        <TouchableOpacity
+            onPress={()=>{navigation.navigate('RoomDetails')}}
+        >
+            <Text>Click Here</Text>
+        </TouchableOpacity>
+
         <View style={styles.upcomingRoom}>
           {Upcoming.map((room, index) => (
             <View style={styles.roomContainer}>
@@ -55,9 +62,7 @@ export default function Home({navigation}) {
           description="Entrepreneur millionaire secrets"
           microNumber="12"
           accountNumber="652"
-          onPress={() =>
-            navigation.navigate('RoomDetails')
-          }
+         
         />
 
         <Room 
@@ -65,9 +70,6 @@ export default function Home({navigation}) {
           description="The Mindful Creative"
           microNumber="30"
           accountNumber="1450"
-          onPress={() =>
-            navigation.navigate('RoomDetails')
-          }
         />
 
         <Room 
@@ -75,9 +77,6 @@ export default function Home({navigation}) {
           description="The Mindful Creative"
           microNumber="30"
           accountNumber="1450"
-          onPress={() =>
-            navigation.navigate('RoomDetails')
-          }
         />
       </ScrollView>
     </View>
