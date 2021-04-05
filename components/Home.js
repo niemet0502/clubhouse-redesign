@@ -19,9 +19,8 @@ const Upcoming = [
   }
 ]
 
-const Stack = createStackNavigator();
 
-export default function App() {
+export default function Home({navigation}) {
   return (
     
     <View style={styles.container}>
@@ -39,7 +38,7 @@ export default function App() {
         <Button
           title="Back to home"
           onPress={() =>
-            navigation.navigate('Details')
+            navigation.navigate('RoomDetails')
           }
         />
         <View style={styles.upcomingRoom}>
