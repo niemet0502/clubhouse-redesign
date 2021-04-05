@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import 'react-native-gesture-handler';
-import { ScrollView, StyleSheet, Text, View, TextInput, Image, Button } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './components/Home';
-import RoomDetails from "./components/RoomDetails"
+import { MainStackNavigator } from "./navigation/StackNavigator";
+import BottomTabNavigator from "./navigation/TabNavigator";
 const Upcoming = [
   {
     index: 1,
@@ -27,19 +26,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (   
     <NavigationContainer>
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false
-      }}>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-        />
-        <Stack.Screen
-          name="RoomDetails"
-          component={RoomDetails}
-        />
-      </Stack.Navigator>
+     <BottomTabNavigator />
     </NavigationContainer>
   );
 }
